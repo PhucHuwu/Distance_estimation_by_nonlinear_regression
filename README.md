@@ -104,7 +104,7 @@ Three videos were tested in different environments to evaluate the model’s app
 - **Matplotlib 3.9.2:** For data visualization.
 
 ```bash
-pip install opencv-python mediapipe numpy matplotlib
+pip install opencv-python==4.5.5 mediapipe==0.10.8 numpy==1.26.4 matplotlib==3.9.2
 ```
 
 ## Usage
