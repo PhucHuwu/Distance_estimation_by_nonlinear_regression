@@ -4,23 +4,23 @@ This project implements a quadratic nonlinear regression model to estimate the r
 
 ## Background
 
-Nonlinear regression is a statistical analysis method used to model the relationship between a dependent variable \( y \) and one or more independent variables \( x \), where the relationship is expressed using nonlinear functions. Common nonlinear functions include powers, logarithms, and exponentials.
+Nonlinear regression is a statistical analysis method used to model the relationship between a dependent variable `y` and one or more independent variables `x`, where the relationship is expressed using nonlinear functions. Common nonlinear functions include powers, logarithms, and exponentials. 
 
 The general form of a nonlinear regression model can be represented as:
 
-\[
-y = f(x, \theta) + \varepsilon
-\]
+```
+y = f(x, θ) + ε
+```
 
 Where:
-- \( f(x, \theta) \): Nonlinear function of the independent variable(s) \( x \), parameterized by coefficients \( \theta \).
-- \( \varepsilon \): Random noise or error.
+- `f(x, θ)`: Nonlinear function of the independent variable(s) `x`, parameterized by coefficients `θ`.
+- `ε`: Random noise or error.
 
 In this project, we employ a quadratic model of the form:
 
-\[
-y = a x^2 + b x + c + \varepsilon
-\]
+```
+y = a * x^2 + b * x + c + ε
+```
 
 ## Problem Statement
 
@@ -40,22 +40,22 @@ The project aims to estimate the real-world distance between a hand and a camera
 3. **Pixel Distance Calculation:**
    - Using the Euclidean formula:
      
-     \[
-     d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
-     \]
+     ```
+     d = sqrt((x2 - x1)^2 + (y2 - y1)^2)
+     ```
 
 4. **Perspective Effect:**
    - Pixel distances increase as the hand moves closer to the camera and decrease as it moves away.
 
 ## Quadratic Model Fitting
 
-The quadratic regression model was fitted using pixel distances as input \( x \) and real-world distances \( y \) as output:
+The quadratic regression model was fitted using pixel distances as input `x` and real-world distances `y` as output:
 
-\[
-y = a x^2 + b x + c
-\]
+```
+y = a * x^2 + b * x + c
+```
 
-The coefficients \( a, b, c \) were determined using Python’s **numpy.polyfit** function, which minimizes the sum of squared errors between observed and predicted values.
+The coefficients `a, b, c` were determined using Python’s **numpy.polyfit** function, which minimizes the sum of squared errors between observed and predicted values.
 
 ## Data Collection
 
@@ -130,3 +130,4 @@ pip install opencv-python==4.5.5 mediapipe==0.10.8 numpy==1.26.4 matplotlib==3.9
 
 ## Acknowledgments
 This project demonstrates the efficacy of quadratic nonlinear regression for practical 3D distance estimation tasks, leveraging the simplicity and robustness of a parabolic model in the context of 2D image data.
+
